@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheets/cssReset.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <title>Калькулятор расчёта среднего</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <h1 class="main-title">Калькулятор расчёта среднего</h1>
+
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <input type="radio" name="list" value="not_changed" id="dropdown">
+                    <label for="dropdown"></label>
+
+                    <input type="radio" name="list" value="not_changed" id="background" checked>
+                    <label class="background" for="background"></label>
+                    
+                    <div class="items">
+                        <div class="items__wrapper">
+                            <input type="radio" name="list" value="usd" id="first-value">
+                            <label for="first-value" class="active-currency">USD</label>
+                            <input type="radio" name="list" value="eur" id="second-value">
+                            <label for="second-value">EUR</label>
+                            <input type="radio" name="list" value="rub" id="third-value">
+                            <label for="third-value">RUB</label>
+                            <div class="current-container" id="current-container">
+                                <div class="current-container__value">USD</div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="arrow">
+                        <svg height="30px" viewBox="0 0 512 512" width="30px">
+                            <polygon
+                                points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__container">
+            <div class="shares-section"></div>
+
+            <div class="tabs">
+                <div class="tabs__content">
+                    <input type="radio" name="inditificator" class="content__radio-btn" id="tab_01" checked>
+                    <input type="radio" name="inditificator" class="content__radio-btn" id="tab_02">
+
+                    <div class="content__tabs-titles">
+                        <label class="tabs-titles__title" for="tab_01">
+                            <span class="title-label__title">Среднее</span>
+                        </label>
+                        <label class="tabs-titles__title" for="tab_02">
+                            <span class="title-label__title">Усреднение позиций</span>
+                        </label>
+                    </div>
+
+                    <div class="slider"></div>
+
+                    <div class="tabs__content-text">
+                        <div class="content-text__text tab01">
+                            <div class="text__average-price-container">
+                                <span class="average-price-container__position-cost">Средняя цена позиции: 
+                                    <span class="average-output-price" data-currency="$">0</span>
+                                </span>
+                            </div>
+                            <div class="text__current-price-container">
+                                <div class="current-price-container__price">
+                                    <div class="current-price__title">Текущая цена</div>
+                                    <input type="text" placeholder="200 $" class="current-price__input">
+                                </div>
+                                <div class="current-price-container__profit">
+                                    <div class="profit__title">Текущий профит</div>
+                                    <div class="profit__price"><span data-currency="$" class="profit-value">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-text__text tab02">
+                            <div class="text__desired-average-price-container">
+                                <div class="desired-average-price-container__desired-price">
+                                    <div class="desired-price__title">Желаемая средняя цена</div>
+                                    <input type="text" placeholder="205 $" class="desired-price__input">
+                                </div>
+                                <div class="desired-average-price-container__current-price">
+                                    <div class="current-price__title">Текущая цена</div>
+                                    <input type="text" placeholder="200 $" class="current-price__input">
+                                </div>
+                            </div>
+                            <span class="text__shares-amount">Количество акций к покупке: 
+                                <span class="shares-amount__amount-output">0 шт</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/dist/utils.js"></script>
+
+    <script src="scripts/dist/render-form.js"></script>    
+    <script src="scripts/dist/form-builder.js"></script>
+
+    <script src="scripts/dist/average-tab-BL.js"></script>
+    <script src="scripts/dist/average-tab-PL.js"></script>
+    
+    <script src="scripts/dist/position-averaging-tab-BL.js"></script>
+    <script src="scripts/dist/position-averaging-tab-PL.js"></script>
+
+    <script src="scripts/dist/app.js"></script>
+  
+    <script src="scripts/dist/highlight-current-currency.js"></script>
+    <script src="scripts/dist/change-currency.js"></script>
+</body>
+</html>
